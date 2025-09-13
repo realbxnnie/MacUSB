@@ -51,5 +51,8 @@ app = BUNDLE(
     info_plist={
         "CFBundleShortVersionString": "1.00",
         "CFBundleVersion": "1",
+        "SMPrivilegedExecutables": {
+            "MacUSB": True
+        }
     }
 )

@@ -8,6 +8,7 @@ from tkinter import *
 
 from Mods.TriggerButton import TriggerButton
 from Utils.Resource import Resource
+from GUI.CreateInstallMedia import CreateInstallMedia
 
 sys.path.append("..")
 from MacUSB import Program
@@ -30,7 +31,7 @@ class Home(Tk):
         #.     Create installation media     .#
 
         self.createinstallmedia = Frame(self, width=370, height=60)
-        self.createinstallmedia.pack(pady=15)
+        self.createinstallmedia.place(relx=.5, rely=.3, anchor='c')
 
         self.createinstallmedia.grid_propagate(0)
 
@@ -40,9 +41,10 @@ class Home(Tk):
         self.createinstallmedia.description = Label(self.createinstallmedia, background="gray20", foreground="white", font=("SF Pro Display", 15), text="Create a bootable USB installer using installer application.")
         self.createinstallmedia.description.pack(pady=0)
 
-        self.createinstallmedia.trigger = TriggerButton(self.createinstallmedia)
+        self.createinstallmedia.trigger = TriggerButton(self.createinstallmedia, command=lambda self=self: self.trigger_cim())
         self.createinstallmedia.trigger.pack(pady=0)
-
 
         self.mainloop()
 
+    def trigger_cim(self):
+        CreateInstallMedia()

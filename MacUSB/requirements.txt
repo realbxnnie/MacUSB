@@ -1,3 +1,4 @@
 requests
 tkmacosx
 py2app
+pillow
