@@ -7,8 +7,6 @@ from threading import Thread
 from tkinter import *
 from tkinter import messagebox
 
-from PIL import Image, ImageTk
-
 from Utils.Resource import Resource
 from Mods.MarqueeBar import MarqueeBar
 
